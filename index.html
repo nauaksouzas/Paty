@@ -260,6 +260,99 @@ footer small{opacity:.55;font-weight:300}
   .modal-card img{max-height:260px}
 }
 button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{outline:2.5px solid var(--lipstick);outline-offset:2px}
+
+/* ── MOBILE POLISH ───────────── */
+.menu-btn{display:none;background:var(--petal);border:none;width:2.7rem;height:2.7rem;border-radius:50%;cursor:pointer;flex-direction:column;align-items:center;justify-content:center;gap:5px;transition:background .2s}
+.menu-btn:hover{background:var(--blush)}
+.menu-btn span{display:block;width:1.05rem;height:2px;border-radius:2px;background:var(--cocoa);transition:transform .25s, opacity .2s}
+.menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.menu-btn.open span:nth-child(2){opacity:0}
+.menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{position:absolute;top:100%;left:0;right:0;background:rgba(255,247,244,.97);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--blush);padding:.3rem 1.4rem 1.4rem;display:flex;flex-direction:column;opacity:0;transform:translateY(-12px);pointer-events:none;transition:opacity .25s, transform .25s;box-shadow:0 28px 44px -30px rgba(67,34,47,.4)}
+.mobile-menu.open{opacity:1;transform:none;pointer-events:auto}
+.mobile-menu a{font-family:'Fraunces',serif;font-size:1.3rem;color:var(--cocoa);text-decoration:none;padding:.9rem .2rem;border-bottom:1px solid var(--blush)}
+.mobile-menu a.mm-cta{font-family:'Outfit',sans-serif;font-size:.95rem;text-align:center;margin-top:1.1rem;padding:.95rem;border-bottom:none}
+@media(min-width:901px){.mobile-menu{display:none}}
+
+@media(max-width:900px){
+  .menu-btn{display:inline-flex}
+  nav{padding:.65rem 1rem}
+  .brand img{height:46px;width:46px}
+  .brand-name{font-size:1.15rem}
+  .brand-name small{font-size:.52rem;letter-spacing:.34em}
+  .cart-btn{padding:.55rem 1.05rem;font-size:.84rem}
+  .nav-actions{gap:.55rem}
+}
+
+@media(max-width:760px){
+  .hero-photo{width:calc(100% - 1.7rem);height:min(56vh,440px);object-fit:cover;object-position:62% 30%;margin:.85rem .85rem 0;border-radius:26px;box-shadow:0 18px 44px -18px rgba(201,47,99,.35)}
+  .hero-panel{padding:1.7rem 1.3rem .2rem}
+  .hero-panel .eyebrow{font-size:.68rem}
+  .hero-panel h1{font-size:clamp(2.15rem,9vw,2.8rem)}
+  .hero-panel p{font-size:1.02rem;max-width:30rem}
+  .hero-panel .btn-primary{font-size:.98rem;padding:1rem 2.3rem}
+}
+
+@media(max-width:640px){
+  .ribbon{font-size:.66rem;letter-spacing:.16em;padding:.5rem 0}
+  .story{padding:3rem 1.2rem 2.6rem;gap:2.2rem}
+  .story-img img{transform:rotate(-1deg)}
+  .story-stamp{font-size:.62rem;padding:.7rem .85rem;bottom:-.8rem;right:.2rem}
+  .featured{padding:3rem 1rem 3.6rem}
+  .ritual{padding:3rem 1.2rem}
+  .newsletter{padding:3.4rem 1.2rem 3.8rem}
+  .shop{padding:2.4rem .9rem 4.2rem}
+  .shop-head{text-align:center;justify-content:center}
+  .shop-head p{font-size:.92rem}
+
+  .toolbar{flex-direction:column;flex-wrap:nowrap;align-items:stretch;gap:.65rem;border-radius:22px;padding:.75rem}
+  .chips{flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .chips::-webkit-scrollbar{display:none}
+  .chip{flex:0 0 auto;background:var(--powder)}
+  .chip.active{background:var(--cocoa)}
+  .toolbar-right{flex-wrap:nowrap}
+  .search{flex:1;min-width:0}
+  .search input{width:auto;flex:1;min-width:0}
+
+  .grid{grid-template-columns:repeat(2,1fr);gap:.85rem}
+  .card{border-radius:18px}
+  .card-img{aspect-ratio:1/1}
+  .badge{top:.6rem;left:.6rem;font-size:.56rem;padding:.3rem .65rem}
+  .fav{top:.5rem;right:.5rem;width:2rem;height:2rem;font-size:.92rem}
+  .card-body{padding:.8rem .85rem 1rem;gap:.3rem}
+  .card-cat{font-size:.58rem;letter-spacing:.2em}
+  .card-title{font-size:.98rem}
+  .card-sub{font-size:.78rem}
+  .card-foot{flex-direction:column;align-items:stretch;gap:.55rem;padding-top:.65rem}
+  .price{font-size:1.08rem}
+  .add{width:100%;padding:.62rem .5rem;font-size:.8rem}
+  .add:active{transform:scale(.96)}
+  .empty{padding:3rem .5rem}
+
+  .grid-featured{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:74%;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:1.05rem;margin:1.4rem -1rem 0;padding:.3rem 1.05rem 1.3rem;scrollbar-width:none}
+  .grid-featured::-webkit-scrollbar{display:none}
+  .grid-featured .card{scroll-snap-align:center}
+
+  .steps{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .step{padding:1.15rem .85rem;border-radius:18px}
+  .step .ic{font-size:1.35rem}
+  .step b{font-size:.95rem}
+  .step span{font-size:.76rem}
+
+  .drawer{height:100dvh}
+  .qty button{width:1.9rem;height:1.9rem;font-size:1rem}
+  .modal{align-items:flex-end;padding:0}
+  .modal-card{border-radius:26px 26px 0 0;max-height:90vh;transform:translateY(8%)}
+  .modal.open .modal-card{transform:translateY(0)}
+  .modal-body{padding:1.6rem 1.4rem 2rem}
+  .modal-body .add{align-self:stretch;text-align:center}
+  .toast{width:max-content;max-width:calc(100vw - 1.6rem);text-align:center;font-size:.85rem;padding:.75rem 1.3rem}
+
+  footer{padding:2.7rem 1.2rem 1.7rem}
+  footer .f-links{gap:1.1rem;font-size:.85rem}
+  .f-about{font-size:.85rem}
+  .news-form{padding:.55rem;gap:.5rem}
+}
 </style>
 </head>
 <body>
@@ -279,6 +372,15 @@ button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible{ou
   </div>
   <div class="nav-actions">
     <button class="cart-btn" onclick="toggleCart(true)">Cart <span class="cart-count" id="cartCount">0</span></button>
+    <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#" onclick="go('home');return false">Home</a>
+    <a href="#" onclick="go('shop');return false">Shop</a>
+    <a href="#" onclick="go('home','story');return false">Our Story</a>
+    <a href="#" onclick="go('home','ritual');return false">The Ritual</a>
+    <a href="#" onclick="go('home','footer');return false">Contact</a>
+    <a href="#" class="btn-primary mm-cta" onclick="go('shop');return false">✦ Shop the collection</a>
   </div>
 </nav>
 
@@ -565,7 +667,16 @@ function closeModal(){
   if(!document.getElementById('drawer').classList.contains('open'))
     document.getElementById('overlay').classList.remove('open');
 }
-function closeAll(){ toggleCart(false); closeModal(); document.getElementById('overlay').classList.remove('open'); }
+function closeAll(){ toggleCart(false); closeModal(); toggleMenu(false); document.getElementById('overlay').classList.remove('open'); }
+
+/* mobile menu */
+function toggleMenu(force){
+  const m = document.getElementById('mobileMenu'), b = document.getElementById('menuBtn');
+  const open = force!==undefined ? force : !m.classList.contains('open');
+  m.classList.toggle('open', open);
+  b.classList.toggle('open', open);
+  b.setAttribute('aria-expanded', open);
+}
 document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeAll(); });
 
 /* toast */
@@ -578,6 +689,7 @@ function toastMsg(msg){
 
 /* page router */
 function go(page, anchor){
+  toggleMenu(false);
   document.getElementById('page-home').hidden = page!=='home';
   document.getElementById('page-shop').hidden = page!=='shop';
   if(anchor){
